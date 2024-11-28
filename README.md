@@ -112,7 +112,7 @@ A daily guessing game, like wordle. The user inputs their last.fm account name a
 <img src="figma_with_arrows.png" width=600>
 
 ### [BONUS] Interactive Prototype
-
+<img src="guess.fm_figma.gif" width=300>
 <br>
 
 # Milestone 2 - Build Sprint 1 (Unit 8)
