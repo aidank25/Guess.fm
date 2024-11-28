@@ -109,6 +109,7 @@ A daily guessing game, like wordle. The user inputs their last.fm account name a
 
 ### [BONUS] Digital Wireframes & Mockups
 <img src="Guess.fm_figma_wireframe.jpg" width=600>
+<img src="figma_with_arrows.png" width=600>
 
 ### [BONUS] Interactive Prototype
 
