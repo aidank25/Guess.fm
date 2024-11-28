@@ -96,16 +96,19 @@ A daily guessing game, like wordle. The user inputs their last.fm account name a
   - Home
 	  - => Game
 	  - => Login
+  - Game
+	  - => Home
 
 ## Wireframes
 
-[Add picture of your hand sketched wireframes in this section] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+[Add picture of your hand sketched wireframes in this section] <img src="guess.fm_paper_wireframe.jpg" width=600>
 
 <br>
 
 <br>
 
 ### [BONUS] Digital Wireframes & Mockups
+<img src="Guess.fm_figma_wireframe.jpg" width=600>
 
 ### [BONUS] Interactive Prototype
 
