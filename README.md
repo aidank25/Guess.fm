@@ -125,11 +125,13 @@ A daily guessing game, like wordle. The user inputs their last.fm account name a
 ## Issue cards
 
 <img src="sprint1_board.png" width=600>
-- [Add screenshot of your Project Board with the issues that you're working on in the **NEXT sprint**. It should include issues for next unit with assigned owners.] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="sprint1_sprint2board" width=600>
 
 ## Issues worked on this sprint
 
-- List the issues you completed this sprint
+- home layout file
+- game layout file
+- button navigation between home and game
 - [Add giphy that shows current build progress for Milestone 2. Note: We will be looking for progression of work between Milestone 2 and 3. Make sure your giphys are not duplicated and clearly show the change from Sprint 1 to 2.]
 
 <br>
