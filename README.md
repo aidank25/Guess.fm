@@ -50,9 +50,10 @@ A daily guessing game, like wordle. The user inputs their last.fm account name a
 
 **Required Features**
 
-1. user can input their last.fm account (not login)
+1. ~user can input their last.fm account (not login)~
 2. user can input a guess for a song and receive feedback in the form of clues
 3. user can only play once per day
+4. ~user can navigate from home screen to game screen~
 
 **Optional Features**
 
