@@ -125,7 +125,7 @@ A daily guessing game, like wordle. The user inputs their last.fm account name a
 ## Issue cards
 
 <img src="sprint1_board.png" width=600>
-<img src="sprint1_sprint2board" width=600>
+<img src="sprint1_sprint2board.png" width=600>
 
 ## Issues worked on this sprint
 
