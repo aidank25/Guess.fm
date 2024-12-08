@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "71379882431",
+    "project_id": "guess-fm",
+    "storage_bucket": "guess-fm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71379882431:android:733c29fa59c7278f50510a",
+        "android_client_info": {
+          "package_name": "com.example.guessfm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDo1SWPQ2hHR230JKScl4TJmUi_n0RUpWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
