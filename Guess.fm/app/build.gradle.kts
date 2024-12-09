@@ -1,12 +1,22 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
 }
+val apikeyPropertiesFile = rootProject.file("./api_keys.properties")
+val apikeyProperties = Properties()
+apikeyProperties.load(apikeyPropertiesFile.inputStream())
+val api_key = apikeyProperties.getValue("LASTFM_KEY")
 
 android {
     namespace = "com.example.guessfm"
     compileSdk = 34
+
+    buildFeatures {
+        buildConfig = true
+    }
 
     defaultConfig {
         applicationId = "com.example.guessfm"
@@ -16,6 +26,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "API_KEY", "${api_key}")
     }
 
     buildTypes {
@@ -55,5 +67,6 @@ dependencies {
     // Declare the dependency for the Cloud Firestore library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-firestore")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
     apply(plugin = "com.google.gms.google-services")
 }
