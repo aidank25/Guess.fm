@@ -85,7 +85,7 @@ class Game {
 
         return "%02d:%02d:%02d".format(hours, minutes, seconds)
     }
-    fun guess(guess: String): Boolean{
+    fun checkGuess(guess: String): Boolean{
         return guess.lowercase() in this.trackName.lowercase() && guess.length > trackName.length/3
     }
 
