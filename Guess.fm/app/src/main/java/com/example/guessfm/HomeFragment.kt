@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONException
@@ -26,6 +27,10 @@ class HomeFragment : Fragment() {
         view.findViewById<Button>(R.id.playButton).setOnClickListener{
             // first parameter is the context, second is the class of the activity to launch
             val i = Intent(context, GameActivity::class.java)
+            val bundle = Bundle()
+            bundle.putString("fmUsername", view.findViewById<TextView>(R.id.fm_username_input).text.toString())
+            bundle.putString("limit", view.findViewById<TextView>(R.id.limit_input).text.toString())
+            i.putExtras(bundle)
             startActivity(i) // brings up the second activity
         }
         // Update the return statement to return the inflated view from above
