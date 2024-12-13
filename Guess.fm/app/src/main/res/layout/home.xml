@@ -13,35 +13,44 @@
         android:text="Play"
         android:backgroundTint="@color/redfm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sampleNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/limit_box" />
 
-    <EditText
-        android:id="@+id/sampleNumber"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/limit_box"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint="Sample Size"
-        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fmUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/fm_username_box" >
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/fmUsername"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/limit_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Number of top songs to pick from" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fm_username_box"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:hint="Last.fm Username"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
 
-
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fm_username_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last.fm username" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
