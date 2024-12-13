@@ -16,7 +16,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-var numGuesses = 0
 class GameActivity: AppCompatActivity() {
     fun onSubmit(v: View) {
         // closes the activity and returns to first screen
@@ -26,7 +25,7 @@ class GameActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_game)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.game)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.title_text_view)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -39,23 +38,29 @@ class GameActivity: AppCompatActivity() {
             findViewById<TextView>(R.id.clue4)
         )
         lateinit var game: Game
-        val username = ""
+        val username = intent?.getStringExtra("fmUsername")?: ""
+        val limit = intent?.getStringExtra("limit")?.toInt()
         CoroutineScope(Dispatchers.IO).launch {
-            game = Game(username, 50)
+            game = Game(username, limit)
             runOnUiThread({
                 clueTextViews[0].text = game.clues[0]
             })
         }
         val guessButton = findViewById<Button>(R.id.guessButton)
         val guessBox = findViewById<TextInputLayout>(R.id.textInputLayout)
+        val endMessage = findViewById<TextView>(R.id.endMessageTextView)
         guessButton.setOnClickListener{
+            game.numGuesses++
             if (game.checkGuess(guessBox.editText?.text.toString())){
-                guessButton.text = "you win!"
+                endMessage.text = "You did it! The song was " + game.trackName
+            }
+            else if(game.numGuesses >= 4){
+                endMessage.text = "Nice try. The song was " + game.trackName
             }
             else{
                 guessBox.editText?.setText("")
-                numGuesses++
-                clueTextViews[numGuesses].text = game.clues[numGuesses]
+
+                clueTextViews[game.numGuesses].text = game.clues[game.numGuesses]
             }
 
         }
