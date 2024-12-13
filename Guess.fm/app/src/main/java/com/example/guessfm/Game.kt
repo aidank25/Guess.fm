@@ -1,10 +1,12 @@
 package com.example.guessfm
 
+import android.util.Log
 import com.google.firebase.BuildConfig
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
+import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import kotlin.random.Random
@@ -12,12 +14,13 @@ import kotlin.random.Random
 
 private val API_KEY = com.example.guessfm.BuildConfig.API_KEY
 
-val urlBase = "https://ws.audioscrobbler.com/2.0/?method="
-val urlTopTracks = "user.gettoptracks"
+val urlHost = "ws.audioscrobbler.com"
+val urlMethod = "user.gettoptracks"
 val urlTrackDetails = ""
+val aUrl = "https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks"
 
 class Game {
-    constructor(username: String, limit: Number?){
+    constructor(username: String, limit: Int?){
         this.username = username
         this.limit = limit?: 50
         pickRandomSong()
@@ -25,7 +28,7 @@ class Game {
 
     }
     val username: String
-    val limit: Number
+    val limit: Int
     lateinit var trackId: String
     lateinit var trackName: String
     //data for clues
@@ -36,20 +39,37 @@ class Game {
     //clues
     var clues: MutableList<String> = mutableListOf<String>()
     var guesses: MutableList<String> = mutableListOf<String>()
-    lateinit var guessCount: Number
+    var numGuesses = 0
 
     fun pickRandomSong(){
-        /*
+
         val okClient = OkHttpClient()
-        val okRequest = Request.Builder().url(urlBase + urlTopTracks)
-            .addHeader("api_key", API_KEY)
-            .addHeader("user", username)
+
+        val okRequest = Request.Builder().url(
+            HttpUrl.Builder()
+                .scheme("https")
+                .host(urlHost)
+                .addPathSegment("2.0")
+                .addQueryParameter("method", urlMethod)
+                .addQueryParameter("api_key", API_KEY)
+                .addQueryParameter("user", username)
+                .addQueryParameter("format","json")
+                .build()
+        )
             .build()
+
+        /*
+        val okRequest = Request.Builder()
+            .url("https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=stldsk&api_key=50e9bc5b1de6ff7c139e5351b85cf8a3&format=json")
+            .build()
+         */
         val okResponse = okClient.newCall(okRequest).execute()
         val response = okResponse.body?.string()?: ""
-        */
+        Log.i("http request", okRequest.headers.toString())
+        Log.i("http response", response)
 
-         val response = this.sampleResponse
+
+        //val response = this.sampleResponse
         // parse json
         val gson = GsonBuilder().setLenient().create()
         val jsonElement = gson.fromJson(response, JsonElement::class.java)
@@ -57,7 +77,7 @@ class Game {
         val topTracks = jsonObject.getAsJsonObject("toptracks")
         val track = topTracks.getAsJsonArray("track")
         //select random track
-        val randInt = Random.nextInt(0,49)
+        val randInt = Random.nextInt(0,limit-1)
         val theTrack = track[randInt]
         val artist: JsonObject = theTrack.asJsonObject.get("artist").asJsonObject
 
