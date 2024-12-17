@@ -53,16 +53,11 @@ class Game {
                 .addQueryParameter("method", urlMethod)
                 .addQueryParameter("api_key", API_KEY)
                 .addQueryParameter("user", username)
+                .addQueryParameter("limit", limit.toString())
                 .addQueryParameter("format","json")
                 .build()
         )
             .build()
-
-        /*
-        val okRequest = Request.Builder()
-            .url("https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=stldsk&api_key=50e9bc5b1de6ff7c139e5351b85cf8a3&format=json")
-            .build()
-         */
         val okResponse = okClient.newCall(okRequest).execute()
         val response = okResponse.body?.string()?: ""
         Log.i("http request", okRequest.headers.toString())
@@ -77,7 +72,7 @@ class Game {
         val topTracks = jsonObject.getAsJsonObject("toptracks")
         val track = topTracks.getAsJsonArray("track")
         //select random track
-        val randInt = Random.nextInt(0,limit-1)
+        val randInt = Random.nextInt(0,limit)
         val theTrack = track[randInt]
         val artist: JsonObject = theTrack.asJsonObject.get("artist").asJsonObject
 
