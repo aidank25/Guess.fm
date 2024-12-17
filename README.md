@@ -175,6 +175,7 @@ from the original requirements
 [![Demo Video]](https://youtu.be/awT99LD5744)
 
 ## Demo Day Full Demo Video
-
+- first 4 minutes are a sort of playthrough of the app similar to the previous video
+- last 6ish minutes are an explanation of how the app works  
 [![Full Demo Video]](https://youtu.be/Y7ARmzRValw)
 
