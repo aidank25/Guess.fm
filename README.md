@@ -140,7 +140,8 @@ A daily guessing game, like wordle. The user inputs their last.fm account name a
 
 ## GitHub Project board
 
-[Add screenshot of your Project Board with the updated status of issues for Milestone 3. Note that these should include the updated issues you worked on for this sprint and not be a duplicate of Milestone 2 Project board.] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="sprint2_project_board.png" width=600>
+<img src="sprint2_milestones.png" width=600>
 
 ## Completed user stories
 
@@ -165,6 +166,7 @@ from the original requirements
 
 ### An example where I set the song to be picked from the user's top 5 songs and fail to guess the song.
 <img src="guessfm_sprint2_1.gif" width=600>
+
 ### An example where I set the song to be picked from the user's top 80 songs and succeed in guessing the song.
 <img src="guessfm_sprint2_2.gif" width=600>
 
