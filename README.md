@@ -148,6 +148,21 @@ A daily guessing game, like wordle. The user inputs their last.fm account name a
 - List any pending user stories / any user stories you decided to cut
 from the original requirements
 
+### completed
+- user can input their last.fm account (not login)
+- user can input a guess for a song and receive feedback in the form of clues
+- user can navigate from home screen to game screen
+- user can customize the difficulty (pick random song from top X listened to songs)
+- inputted guesses are cleaned and guesses that are similar enough count as correct
+### cut
+- user can choose to guess a song or a letter and receive feedback on where that letter is present in the song title (hangman)
+- user can receive a notification when a new song is available to guess
+- user can only play once per day
+- user can log in
+- user can view past completed games and the number of guesses it took them
+- user can see statistics (average # of guesses, artist they are most familiar with, etc.)
+- user can copy the results of the game to clipboard
+
 [Add video/gif of your current application that shows build progress]
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
