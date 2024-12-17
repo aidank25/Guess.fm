@@ -163,8 +163,10 @@ from the original requirements
 - user can see statistics (average # of guesses, artist they are most familiar with, etc.)
 - user can copy the results of the game to clipboard
 
-[Add video/gif of your current application that shows build progress]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+### An example where I set the song to be picked from the user's top 5 songs and fail to guess the song.
+<img src="guessfm_sprint2_1.gif" width=600>
+### An example where I set the song to be picked from the user's top 80 songs and succeed in guessing the song.
+<img src="guessfm_sprint2_2.gif" width=600>
 
 ## App Demo Video
 
